@@ -17,13 +17,24 @@ class Harvest
 
     public function __get($name) : Harvest
     {
-        $this->endpoint = EndpointFactory::get($name);
+        $this->setEndpoint($name);
 
         return $this;
     }
 
-    public function __call($name, $args) : Response
+    public function setEndpoint(string $name)
     {
+        $this->endpoint = EndpointFactory::get($name);
+    }
+
+    public function __call($name, $args)
+    {
+        if (is_null($this->endpoint)) {
+            $this->setEndpoint($name);
+
+            return $this;
+        }
+
         if (is_null($this->endpoint)) {
             throw new \RuntimeException('Endpoint not set.');
         }
@@ -33,10 +44,6 @@ class Harvest
         }
 
         call_user_func_array([$this->endpoint, $name], $args);
-
-        if (is_null($this->endpoint->getUrl())) {
-            return $this;
-        }
 
         return new Response($this->httpClient, $this->endpoint);
     }
