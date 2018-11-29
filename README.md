@@ -1,6 +1,6 @@
 # Harvest PHP
 
-A PHP package for Harvest time tracking API.
+A PHP package for the Harvest time tracking API.
 
 ## Usage
 

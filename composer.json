@@ -1,6 +1,6 @@
 {
     "name": "michaeljdennis/harvest-api-php",
-    "description": "PHP package for the Harvest API.",
+    "description": "A PHP package for the Harvest time tracking API.",
     "keywords": ["harvest"],
     "license": "MIT",
     "authors": [
