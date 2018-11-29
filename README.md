@@ -11,7 +11,7 @@ $harvest->projects->get();
 ## To Do
 
 - [ ] Add all endpoints
-- [ ] Add license
+- [x] Add license
 - [ ] Add Laravel service provider
 - [ ] Add Laravel package discovery
 - [ ] Add tests
