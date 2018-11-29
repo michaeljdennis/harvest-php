@@ -34,5 +34,15 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Harvest\\Laravel\\HarvestServiceProvider"
+            ],
+            "aliases": {
+                "Harvest": "Harvest\\Laravel\\Harvest"
+            }
+        }
+    }
 }
