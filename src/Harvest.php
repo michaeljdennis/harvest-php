@@ -45,6 +45,10 @@ class Harvest
 
         call_user_func_array([$this->endpoint, $name], $args);
 
+        if (strlen($this->endpoint->getUrl()) === 0) {
+            return $this;
+        }
+
         return new Response($this->httpClient, $this->endpoint);
     }
 }
