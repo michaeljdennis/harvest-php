@@ -4,11 +4,13 @@ namespace Harvest\Endpoints;
 
 abstract class BaseEndpoint
 {
-    private $httpClient;
+    protected $baseUrl;
 
-    private $baseUrl;
+    protected $url;
 
-    private $url;
+    protected $fromPath;
+    
+    protected $fromId;
 
     abstract public function getPath() : string;
 
@@ -19,6 +21,7 @@ abstract class BaseEndpoint
     public function __construct()
     {
         $this->baseUrl = 'https://api.harvestapp.com/api/v2/';
+        $this->url = '';
     }
 
     public function get(int $id = null) : void
@@ -28,18 +31,10 @@ abstract class BaseEndpoint
 
     private function generateUrl($id) : void
     {
-        // PROJECTS
-        // /projects
-        // /projects/{PROJECT_ID}
-        //
-        // USER ASSIGNMENTS
-        // /projects/{PROJECT_ID}/user_assignments
-        // /projects/{PROJECT_ID}/user_assignments/{USER_ASSIGNMENT_ID}
-
         $url = $this->baseUrl;
 
-        if (isset($this->projectId)) {
-            $url .= 'projects/' . $this->projectId . '/';
+        if (!is_null($this->fromPath) && !is_null($this->fromId)) {
+            $url .= $this->fromPath . '/' . $this->fromId . '/';
         }
 
         $url .= $this->getPath();

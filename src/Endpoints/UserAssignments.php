@@ -21,11 +21,9 @@ class UserAssignments extends BaseEndpoint
         return UserAssignment::class;
     }
 
-    // FIXME:
     public function fromProject(int $id)
     {
-        $this->projectId = $id;
-
-        return $this;
+        $this->fromPath = 'projects';
+        $this->fromId = $id;
     }
 }
