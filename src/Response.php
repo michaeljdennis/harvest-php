@@ -14,6 +14,7 @@ class Response
     {
         $this->httpClient = $httpClient;
         $this->endpoint = $endpoint;
+        $this->collection = [];
 
         $this->sendRequest();
     }
@@ -22,10 +23,12 @@ class Response
     {
         $response = $this->httpClient->get($this->endpoint->getUrl());
 
-        return $this->processResponse($response);
+        $this->processResponse($response);
+
+        return $this->collection;
     }
 
-    private function processResponse($response) : array
+    private function processResponse($response) : void
     {
         if (!property_exists($response, $this->endpoint->getResponseKey())) {
             $tmp = new \stdClass();
@@ -33,13 +36,11 @@ class Response
             $response = $tmp;
         }
 
-        return $this->populateModels($response);
+        $this->populateModels($response);
     }
 
-    private function populateModels(object $result) : array
+    private function populateModels(object $result) : void
     {
-        $collection = [];
-
         foreach ($result->{$this->endpoint->getResponseKey()} as $object) {
             $modelClass = $this->endpoint->getModelClass();
             $model = new $modelClass;
@@ -48,8 +49,6 @@ class Response
 
             $this->collection[] = $model;
         }
-
-        return $this->collection;
     }
 
     private function hydrateProperties(object $model, object $object) : void
