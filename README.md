@@ -14,6 +14,14 @@ composer require michaeljdennis/harvest-php
 
 ```
 use Harvest\Harvest;
+use Harvest\Client;
+use GuzzleHttp\Client as HttpClient;
+
+$harvest = new Harvest(
+    new Client(
+        new HttpClient()
+    )
+);
 
 $harvest->projects->get();
 ```
