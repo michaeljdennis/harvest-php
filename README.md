@@ -1,6 +1,12 @@
 # Harvest PHP
 
-A PHP package for the Harvest time tracking API.
+A PHP package for the [Harvest](https://www.getharvest.com/) API.
+
+## Installation
+
+```
+composer require michaeljdennis/harvest-php
+```
 
 ## Usage
 
@@ -23,7 +29,4 @@ Harvest::projects()->get();
 ## To Do
 
 - [ ] Add all endpoints
-- [x] Add license
-- [x] Add Laravel service provider
-- [x] Add Laravel package discovery
 - [ ] Add tests
