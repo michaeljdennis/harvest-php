@@ -9,7 +9,7 @@ abstract class BaseEndpoint
     protected $url;
 
     protected $fromPath;
-    
+
     protected $fromId;
 
     abstract public function getPath() : string;
