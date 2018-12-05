@@ -49,7 +49,8 @@ class Harvest
             return $this;
         }
 
-        $response = new Response($this->httpClient, $this->endpoint);
+        $request = new Request($this->httpClient, $this->endpoint);
+        $response = $request->send();
 
         $this->endpoint = null;
 
