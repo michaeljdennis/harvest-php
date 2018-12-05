@@ -59,14 +59,4 @@ class Request
             }
         }
     }
-
-    public function data()
-    {
-        return $this->collection;
-    }
-
-    public function __toString()
-    {
-        return json_encode($this->collection);
-    }
 }
