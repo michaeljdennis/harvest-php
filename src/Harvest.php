@@ -22,7 +22,7 @@ class Harvest
         return $this;
     }
 
-    public function setEndpoint(string $name)
+    public function setEndpoint(string $name) : void
     {
         $this->endpoint = EndpointFactory::get($name);
     }
