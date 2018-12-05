@@ -13,7 +13,7 @@ class Response
         $this->collection = $collection;
     }
 
-    public function data()
+    public function data() : array
     {
         return $this->collection;
     }
