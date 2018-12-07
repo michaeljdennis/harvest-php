@@ -2,6 +2,8 @@
 
 A PHP package for the [Harvest](https://www.getharvest.com/) API.
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/a7e2b93a6db64440a928/maintainability)](https://codeclimate.com/github/michaeljdennis/harvest-php/maintainability)
+
 ## Installation
 
 ```
@@ -33,8 +35,3 @@ use Harvest;
 
 Harvest::projects()->get();
 ```
-
-## To Do
-
-- [ ] Add all endpoints
-- [ ] Add tests
