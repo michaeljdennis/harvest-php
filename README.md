@@ -3,6 +3,9 @@
 A PHP package for the [Harvest](https://www.getharvest.com/) API.
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a7e2b93a6db64440a928/maintainability)](https://codeclimate.com/github/michaeljdennis/harvest-php/maintainability)
+![PHP from Packagist](https://img.shields.io/packagist/php-v/michaeljdennis/harvest-php.svg)
+[![Packagist](https://img.shields.io/packagist/dt/michaeljdennis/harvest-php.svg)](https://packagist.org/packages/michaeljdennis/harvest-php)
+![GitHub](https://img.shields.io/github/license/michaeljdennis/harvest-php.svg)
 
 ## Installation
 
