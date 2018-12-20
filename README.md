@@ -1,6 +1,6 @@
 # Harvest PHP
 
-A PHP package for the [Harvest](https://www.getharvest.com/) API.
+A PHP package for the [Harvest](https://www.getharvest.com/) [API](https://help.getharvest.com/api-v2/).
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a7e2b93a6db64440a928/maintainability)](https://codeclimate.com/github/michaeljdennis/harvest-php/maintainability)
 ![PHP from Packagist](https://img.shields.io/packagist/php-v/michaeljdennis/harvest-php.svg)
@@ -38,3 +38,7 @@ use Harvest;
 
 Harvest::projects()->get();
 ```
+
+## Roadmap
+
+[Check here](https://github.com/michaeljdennis/harvest-php/projects/1) for the current list of tasks.
