@@ -12,11 +12,11 @@ abstract class BaseEndpoint
 
     protected $fromId;
 
-    abstract public function getPath() : string;
+    abstract public function getPath(): string;
 
-    abstract public function getResponseKey() : string;
+    abstract public function getResponseKey(): string;
 
-    abstract public function getModelClass() : string;
+    abstract public function getModelClass(): string;
 
     public function __construct()
     {
@@ -24,29 +24,29 @@ abstract class BaseEndpoint
         $this->url = '';
     }
 
-    public function get(int $id = null) : void
+    public function get(int $id = null): void
     {
         $this->generateUrl($id);
     }
 
-    private function generateUrl($id) : void
+    private function generateUrl($id): void
     {
         $url = $this->baseUrl;
 
         if (!is_null($this->fromPath) && !is_null($this->fromId)) {
-            $url .= $this->fromPath . '/' . $this->fromId . '/';
+            $url .= $this->fromPath.'/'.$this->fromId.'/';
         }
 
         $url .= $this->getPath();
 
         if (!is_null($id)) {
-            $url .= '/' . $id;
+            $url .= '/'.$id;
         }
 
         $this->url = $url;
     }
 
-    public function getUrl() : string
+    public function getUrl(): string
     {
         return $this->url;
     }

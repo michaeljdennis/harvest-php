@@ -6,17 +6,17 @@ use Harvest\Models\Contact;
 
 class Contacts extends BaseEndpoint
 {
-    public function getPath() : string
+    public function getPath(): string
     {
         return 'contacts';
     }
 
-    public function getResponseKey() : string
+    public function getResponseKey(): string
     {
         return 'contacts';
     }
 
-    public function getModelClass() : string
+    public function getModelClass(): string
     {
         return Contact::class;
     }

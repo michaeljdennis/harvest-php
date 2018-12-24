@@ -6,17 +6,17 @@ use Harvest\Models\User;
 
 class Users extends BaseEndpoint
 {
-    public function getPath() : string
+    public function getPath(): string
     {
         return 'users';
     }
 
-    public function getResponseKey() : string
+    public function getResponseKey(): string
     {
         return 'users';
     }
 
-    public function getModelClass() : string
+    public function getModelClass(): string
     {
         return User::class;
     }

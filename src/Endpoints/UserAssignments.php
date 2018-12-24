@@ -6,17 +6,17 @@ use Harvest\Models\UserAssignment;
 
 class UserAssignments extends BaseEndpoint
 {
-    public function getPath() : string
+    public function getPath(): string
     {
         return 'user_assignments';
     }
 
-    public function getResponseKey() : string
+    public function getResponseKey(): string
     {
         return 'user_assignments';
     }
 
-    public function getModelClass() : string
+    public function getModelClass(): string
     {
         return UserAssignment::class;
     }

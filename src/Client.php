@@ -17,12 +17,12 @@ class Client
     public function __construct(HttpClient $httpClient)
     {
         $this->accountId = getenv('HARVEST_ACCOUNT_ID');
-        $this->token = 'Bearer ' . getenv('HARVEST_TOKEN');
+        $this->token = 'Bearer '.getenv('HARVEST_TOKEN');
         $this->userAgent = 'Harvest API Example';
         $this->httpClient = $httpClient;
     }
 
-    public function get(string $endpoint) : object
+    public function get(string $endpoint): object
     {
         $headers = [
             'Harvest-Account-ID' => $this->accountId,
@@ -34,7 +34,7 @@ class Client
             'GET',
             $endpoint,
             [
-                'headers' => $headers
+                'headers' => $headers,
             ]
         );
 

@@ -19,7 +19,7 @@ class Request
         $this->collection = [];
     }
 
-    public function send() : Response
+    public function send(): Response
     {
         $response = $this->httpClient->get($this->endpoint->getUrl());
 
@@ -28,7 +28,7 @@ class Request
         return new Response($this->collection);
     }
 
-    private function processResponse($response) : void
+    private function processResponse($response): void
     {
         if (!property_exists($response, $this->endpoint->getResponseKey())) {
             $tmp = new \stdClass();
@@ -39,11 +39,11 @@ class Request
         $this->populateModels($response);
     }
 
-    private function populateModels(object $result) : void
+    private function populateModels(object $result): void
     {
         foreach ($result->{$this->endpoint->getResponseKey()} as $object) {
             $modelClass = $this->endpoint->getModelClass();
-            $model = new $modelClass;
+            $model = new $modelClass();
 
             $this->hydrateProperties($model, $object);
 
@@ -51,7 +51,7 @@ class Request
         }
     }
 
-    private function hydrateProperties(object $model, object $object) : void
+    private function hydrateProperties(object $model, object $object): void
     {
         foreach ($model as $key => $value) {
             if (property_exists($model, $key)) {

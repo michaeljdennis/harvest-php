@@ -2,8 +2,6 @@
 
 namespace Harvest;
 
-use Harvest\Endpoints\BaseEndpoint;
-
 class Response
 {
     private $collection;
@@ -13,7 +11,7 @@ class Response
         $this->collection = $collection;
     }
 
-    public function data() : array
+    public function data(): array
     {
         return $this->collection;
     }

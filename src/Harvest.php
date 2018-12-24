@@ -15,14 +15,14 @@ class Harvest
         $this->httpClient = $httpClient;
     }
 
-    public function __get($name) : Harvest
+    public function __get($name): self
     {
         $this->setEndpoint($name);
 
         return $this;
     }
 
-    public function setEndpoint(string $name) : void
+    public function setEndpoint(string $name): void
     {
         $this->endpoint = EndpointFactory::get($name);
     }
@@ -40,7 +40,7 @@ class Harvest
         }
 
         if (!method_exists($this->endpoint, $name)) {
-            throw new \RuntimeException('Method ' . $name . ' does not exist on ' . get_class($this->endpoint) . '.');
+            throw new \RuntimeException('Method '.$name.' does not exist on '.get_class($this->endpoint).'.');
         }
 
         call_user_func_array([$this->endpoint, $name], $args);

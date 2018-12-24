@@ -2,8 +2,8 @@
 
 namespace Harvest\Laravel;
 
-use Illuminate\Support\ServiceProvider;
 use Harvest\Harvest;
+use Illuminate\Support\ServiceProvider;
 
 class HarvestServiceProvider extends ServiceProvider
 {

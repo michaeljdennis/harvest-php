@@ -6,17 +6,17 @@ use Harvest\Models\Client;
 
 class Clients extends BaseEndpoint
 {
-    public function getPath() : string
+    public function getPath(): string
     {
         return 'clients';
     }
 
-    public function getResponseKey() : string
+    public function getResponseKey(): string
     {
         return 'clients';
     }
 
-    public function getModelClass() : string
+    public function getModelClass(): string
     {
         return Client::class;
     }

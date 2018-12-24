@@ -6,17 +6,17 @@ use Harvest\Models\TaskAssignment;
 
 class TaskAssignments extends BaseEndpoint
 {
-    public function getPath() : string
+    public function getPath(): string
     {
         return 'task_assignments';
     }
 
-    public function getResponseKey() : string
+    public function getResponseKey(): string
     {
         return 'task_assignments';
     }
 
-    public function getModelClass() : string
+    public function getModelClass(): string
     {
         return TaskAssignment::class;
     }
