@@ -1,8 +1,7 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
-
 use Harvest\Response;
+use PHPUnit\Framework\TestCase;
 
 class ResponseTest extends TestCase
 {
@@ -14,7 +13,7 @@ class ResponseTest extends TestCase
                 1,
                 2,
                 3,
-            ]
+            ],
         ];
 
         $ressponse = new Response($collection);
