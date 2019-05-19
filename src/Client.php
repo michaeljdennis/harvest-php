@@ -18,7 +18,7 @@ class Client
     {
         $this->accountId = getenv('HARVEST_ACCOUNT_ID');
         $this->token = 'Bearer '.getenv('HARVEST_TOKEN');
-        $this->userAgent = 'Harvest API Example';
+        $this->userAgent = 'Harvest PHP (https://github.com/michaeljdennis/harvest-php)';
         $this->httpClient = $httpClient;
     }
 
