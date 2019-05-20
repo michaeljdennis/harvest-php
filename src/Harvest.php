@@ -2,16 +2,20 @@
 
 namespace Harvest;
 
+use Harvest\Config\Environment;
 use Harvest\Endpoints\EndpointFactory;
 
 class Harvest
 {
+    protected $environment;
+
     protected $httpClient;
 
     protected $endpoint;
 
-    public function __construct(Client $httpClient)
+    public function __construct(Environment $environment, Client $httpClient)
     {
+        $this->environment = $environment;
         $this->httpClient = $httpClient;
     }
 
